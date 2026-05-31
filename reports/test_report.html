@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated Network System Test Framework — Test Report</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0a0e1a;
+    color: #cbd5e1;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  header {
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  header h1 { font-size: 1.6rem; color: #f1f5f9; font-weight: 700; }
+  header p  { color: #64748b; font-size: 0.85rem; margin-top: .3rem; }
+  .summary  { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 1.2rem 2rem;
+    min-width: 130px;
+    text-align: center;
+  }
+  .card-value { font-size: 2rem; font-weight: 800; }
+  .card-label { font-size: 0.78rem; color: #64748b; margin-top: .2rem; text-transform: uppercase; letter-spacing: .06em; }
+  .category   { margin-bottom: 2.5rem; }
+  .category h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .cat-score {
+    background: #1e293b;
+    color: #60a5fa;
+    border-radius: 9999px;
+    padding: 2px 10px;
+    font-size: .8rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+    background: #111827;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead tr { background: #0f172a; }
+  th {
+    text-align: left;
+    padding: .7rem 1rem;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .72rem;
+    letter-spacing: .05em;
+    border-bottom: 1px solid #1e293b;
+  }
+  td {
+    padding: .65rem 1rem;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  .pass-row:hover { background: #0f2010; }
+  .fail-row:hover { background: #1f0a0a; }
+  .mono { font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: .8rem; color: #94a3b8; }
+  .details { margin-top: .5rem; }
+  .details pre {
+    background: #0a0e1a;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    padding: .6rem .8rem;
+    font-size: .72rem;
+    color: #64748b;
+    white-space: pre-wrap;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+  footer { margin-top: 3rem; text-align: center; color: #334155; font-size: .78rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🛰 Automated Network System Test Framework</h1>
+  <p>Started: 2026-05-31T21:32:37.534417 &nbsp;|&nbsp; Finished: 2026-05-31T21:33:11.289805</p>
+</header>
+
+<div class="summary">
+        <div class="card">
+          <div class="card-value" style="color:#60a5fa">22</div>
+          <div class="card-label">Total Tests</div>
+        </div>
+        <div class="card">
+          <div class="card-value" style="color:#22c55e">22</div>
+          <div class="card-label">Passed</div>
+        </div>
+        <div class="card">
+          <div class="card-value" style="color:#ef4444">0</div>
+          <div class="card-label">Failed</div>
+        </div>
+        <div class="card">
+          <div class="card-value" style="color:#a78bfa">100.0%</div>
+          <div class="card-label">Pass Rate</div>
+        </div></div>
+
+
+        <section class="category">
+          <h2>📡 PING <span class="cat-score">4/4</span></h2>
+          <table>
+            <thead>
+              <tr><th>Test</th><th>Target</th><th>Status</th><th>Duration</th><th>Message</th></tr>
+            </thead>
+            <tbody>
+            <tr class="result-row pass-row">
+              <td>Ping Google DNS (8.8.8.8)</td>
+              <td class="mono">8.8.8.8</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">3182.8ms</td>
+              <td>Reachable — -1.0% packet loss, avg RTT 23.0ms<div class="details"><pre>{
+  "packet_loss_pct": -1.0,
+  "avg_rtt_ms": 23.0,
+  "packets_sent": 4,
+  "raw": "\nPinging 8.8.8.8 with 32 bytes of data:\nReply from 8.8.8.8: bytes=32 time=25ms TTL=108\nReply from 8.8.8.8: bytes=32 time=24ms TTL=108\nReply from 8.8.8.8: bytes=32 time=24ms TTL=108\nReply from 8.8.8.8: bytes=32 time=22ms TTL=108\n\nPing statistics for 8.8.8.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 22ms, Maximum = 25ms, Av"
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Ping Cloudflare DNS (1.1.1.1)</td>
+              <td class="mono">1.1.1.1</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">3071.57ms</td>
+              <td>Reachable — -1.0% packet loss, avg RTT 32.0ms<div class="details"><pre>{
+  "packet_loss_pct": -1.0,
+  "avg_rtt_ms": 32.0,
+  "packets_sent": 4,
+  "raw": "\nPinging 1.1.1.1 with 32 bytes of data:\nReply from 1.1.1.1: bytes=32 time=32ms TTL=46\nReply from 1.1.1.1: bytes=32 time=33ms TTL=46\nReply from 1.1.1.1: bytes=32 time=33ms TTL=46\nReply from 1.1.1.1: bytes=32 time=33ms TTL=46\n\nPing statistics for 1.1.1.1:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 32ms, Maximum = 33ms, Averag"
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Ping OpenDNS (208.67.222.222)</td>
+              <td class="mono">208.67.222.222</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">3059.0ms</td>
+              <td>Reachable — -1.0% packet loss, avg RTT 22.0ms<div class="details"><pre>{
+  "packet_loss_pct": -1.0,
+  "avg_rtt_ms": 22.0,
+  "packets_sent": 4,
+  "raw": "\nPinging 208.67.222.222 with 32 bytes of data:\nReply from 208.67.222.222: bytes=32 time=23ms TTL=49\nReply from 208.67.222.222: bytes=32 time=22ms TTL=49\nReply from 208.67.222.222: bytes=32 time=22ms TTL=49\nReply from 208.67.222.222: bytes=32 time=22ms TTL=49\n\nPing statistics for 208.67.222.222:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n"
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Ping Local Loopback (127.0.0.1)</td>
+              <td class="mono">127.0.0.1</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">3065.69ms</td>
+              <td>Reachable — -1.0% packet loss, avg RTT 0.0ms<div class="details"><pre>{
+  "packet_loss_pct": -1.0,
+  "avg_rtt_ms": 0.0,
+  "packets_sent": 4,
+  "raw": "\nPinging 127.0.0.1 with 32 bytes of data:\nReply from 127.0.0.1: bytes=32 time<1ms TTL=128\nReply from 127.0.0.1: bytes=32 time<1ms TTL=128\nReply from 127.0.0.1: bytes=32 time<1ms TTL=128\nReply from 127.0.0.1: bytes=32 time<1ms TTL=128\n\nPing statistics for 127.0.0.1:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 0ms, Maximum = 0"
+}</pre></div></td>
+            </tr></tbody>
+          </table>
+        </section>
+        <section class="category">
+          <h2>🔍 DNS <span class="cat-score">4/4</span></h2>
+          <table>
+            <thead>
+              <tr><th>Test</th><th>Target</th><th>Status</th><th>Duration</th><th>Message</th></tr>
+            </thead>
+            <tbody>
+            <tr class="result-row pass-row">
+              <td>DNS google.com</td>
+              <td class="mono">google.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">50.31ms</td>
+              <td>Resolved → 142.250.154.113 in 50.28ms (6 records)<div class="details"><pre>{
+  "resolved_ips": [
+    "142.250.154.113",
+    "142.250.154.102",
+    "142.250.154.101",
+    "142.250.154.139",
+    "142.250.154.100",
+    "142.250.154.138"
+  ],
+  "ipv4": [
+    "142.250.154.113",
+    "142.250.154.102",
+    "142.250.154.101",
+    "142.250.154.139",
+    "142.250.154.100",
+    "142.250.154.138"
+  ],
+  "ipv6": [],
+  "record_count": 6,
+  "resolution_ms": 50.28
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>DNS github.com</td>
+              <td class="mono">github.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">45.26ms</td>
+              <td>Resolved → 140.82.121.4 in 45.24ms (1 record)<div class="details"><pre>{
+  "resolved_ips": [
+    "140.82.121.4"
+  ],
+  "ipv4": [
+    "140.82.121.4"
+  ],
+  "ipv6": [],
+  "record_count": 1,
+  "resolution_ms": 45.24
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>DNS cloudflare.com</td>
+              <td class="mono">cloudflare.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">46.52ms</td>
+              <td>Resolved → 104.16.133.229 in 46.5ms (2 records)<div class="details"><pre>{
+  "resolved_ips": [
+    "104.16.133.229",
+    "104.16.132.229"
+  ],
+  "ipv4": [
+    "104.16.133.229",
+    "104.16.132.229"
+  ],
+  "ipv6": [],
+  "record_count": 2,
+  "resolution_ms": 46.5
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>DNS nonexistent.invalid</td>
+              <td class="mono">nonexistent.thisdoesnotexist.invalid</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">68.7ms</td>
+              <td>Expected DNS failure confirmed (11001)<div class="details"><pre>{
+  "error": "[Errno 11001] getaddrinfo failed"
+}</pre></div></td>
+            </tr></tbody>
+          </table>
+        </section>
+        <section class="category">
+          <h2>🔌 PORT <span class="cat-score">4/4</span></h2>
+          <table>
+            <thead>
+              <tr><th>Test</th><th>Target</th><th>Status</th><th>Duration</th><th>Message</th></tr>
+            </thead>
+            <tbody>
+            <tr class="result-row pass-row">
+              <td>Port Google HTTP (:80)</td>
+              <td class="mono">google.com:80</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">33.16ms</td>
+              <td>HTTP open on :80 (33.03ms)<div class="details"><pre>{
+  "host": "google.com",
+  "port": 80,
+  "service": "HTTP",
+  "state": "open",
+  "connect_ms": 33.03,
+  "expected_open": true
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Port Google HTTPS (:443)</td>
+              <td class="mono">google.com:443</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">41.1ms</td>
+              <td>HTTPS open on :443 (40.88ms)<div class="details"><pre>{
+  "host": "google.com",
+  "port": 443,
+  "service": "HTTPS",
+  "state": "open",
+  "connect_ms": 40.88,
+  "expected_open": true
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Port GitHub SSH (:22)</td>
+              <td class="mono">github.com:22</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">34.3ms</td>
+              <td>SSH open on :22 (34.18ms)<div class="details"><pre>{
+  "host": "github.com",
+  "port": 22,
+  "service": "SSH",
+  "state": "open",
+  "connect_ms": 34.18,
+  "expected_open": true
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>Port Blocked port (:9999)</td>
+              <td class="mono">google.com:9999</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">18044.05ms</td>
+              <td>:9999 correctly closed/filtered<div class="details"><pre>{
+  "host": "google.com",
+  "port": 9999,
+  "service": "port/9999",
+  "state": "closed",
+  "expected_open": false
+}</pre></div></td>
+            </tr></tbody>
+          </table>
+        </section>
+        <section class="category">
+          <h2>🌐 HTTP <span class="cat-score">10/10</span></h2>
+          <table>
+            <thead>
+              <tr><th>Test</th><th>Target</th><th>Status</th><th>Duration</th><th>Message</th></tr>
+            </thead>
+            <tbody>
+            <tr class="result-row pass-row">
+              <td>HTTP Google</td>
+              <td class="mono">https://www.google.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">359.6ms</td>
+              <td>HTTP 200 in 304.09ms<div class="details"><pre>{
+  "status_code": 200,
+  "expected": 200,
+  "response_ms": 304.09,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "content_length": "unknown",
+  "final_url": "https://www.google.com",
+  "redirected": false
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>HTTP Cloudflare</td>
+              <td class="mono">https://www.cloudflare.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">359.37ms</td>
+              <td>HTTP 200 in 325.35ms<div class="details"><pre>{
+  "status_code": 200,
+  "expected": 200,
+  "response_ms": 325.35,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": "unknown",
+  "final_url": "https://www.cloudflare.com",
+  "redirected": false
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>HTTP GitHub</td>
+              <td class="mono">https://github.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">145.4ms</td>
+              <td>HTTP 200 in 120.39ms<div class="details"><pre>{
+  "status_code": 200,
+  "expected": 200,
+  "response_ms": 120.39,
+  "content_type": "text/html; charset=utf-8",
+  "content_length": "unknown",
+  "final_url": "https://github.com",
+  "redirected": false
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>HTTP HTTPBin (GET)</td>
+              <td class="mono">https://httpbin.org/get</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">570.32ms</td>
+              <td>HTTP 200 in 517.4ms<div class="details"><pre>{
+  "status_code": 200,
+  "expected": 200,
+  "response_ms": 517.4,
+  "content_type": "application/json",
+  "content_length": "280",
+  "final_url": "https://httpbin.org/get",
+  "redirected": false
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>HTTP HTTPBin (404 expected)</td>
+              <td class="mono">https://httpbin.org/status/404</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">505.28ms</td>
+              <td>HTTP 404 (expected)<div class="details"><pre>{
+  "status_code": 404,
+  "expected": 404
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>SSL Google (www.google.com)</td>
+              <td class="mono">www.google.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">119.81ms</td>
+              <td>Valid TLS (TLSv1.3), expires in 59 days<div class="details"><pre>{
+  "tls_version": "TLSv1.3",
+  "common_name": "www.google.com",
+  "issuer": "Google Trust Services",
+  "expires": "Jul 30 15:54:12 2026 GMT",
+  "days_until_expiry": 59
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>SSL Cloudflare (www.cloudflare.com)</td>
+              <td class="mono">www.cloudflare.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">116.92ms</td>
+              <td>Valid TLS (TLSv1.3), expires in 65 days<div class="details"><pre>{
+  "tls_version": "TLSv1.3",
+  "common_name": "www.cloudflare.com",
+  "issuer": "Google Trust Services",
+  "expires": "Aug  5 17:54:15 2026 GMT",
+  "days_until_expiry": 65
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>SSL GitHub (github.com)</td>
+              <td class="mono">github.com</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">98.35ms</td>
+              <td>Valid TLS (TLSv1.3), expires in 63 days<div class="details"><pre>{
+  "tls_version": "TLSv1.3",
+  "common_name": "github.com",
+  "issuer": "Sectigo Limited",
+  "expires": "Aug  2 23:59:59 2026 GMT",
+  "days_until_expiry": 63
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>SSL HTTPBin (GET) (httpbin.org)</td>
+              <td class="mono">httpbin.org</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">363.57ms</td>
+              <td>Valid TLS (TLSv1.2), expires in 78 days<div class="details"><pre>{
+  "tls_version": "TLSv1.2",
+  "common_name": "httpbin.org",
+  "issuer": "Amazon",
+  "expires": "Aug 17 23:59:59 2026 GMT",
+  "days_until_expiry": 78
+}</pre></div></td>
+            </tr>
+            <tr class="result-row pass-row">
+              <td>SSL HTTPBin (404 expected) (httpbin.org)</td>
+              <td class="mono">httpbin.org</td>
+              <td><span style="background:#052e16;color:#22c55e;border:1px solid #22c55e;padding:2px 10px;border-radius:9999px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;">PASS</span></td>
+              <td class="mono">367.33ms</td>
+              <td>Valid TLS (TLSv1.2), expires in 78 days<div class="details"><pre>{
+  "tls_version": "TLSv1.2",
+  "common_name": "httpbin.org",
+  "issuer": "Amazon",
+  "expires": "Aug 17 23:59:59 2026 GMT",
+  "days_until_expiry": 78
+}</pre></div></td>
+            </tr></tbody>
+          </table>
+        </section>
+
+<footer>Generated by NetworkTestFramework · 2026-05-31T21:33:11.289805</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+# config/targets.yaml
+# Define all hosts, endpoints, and ports to test.
+# Edit this file to point at your own infrastructure.
+
+hosts:
+  - name: "Google DNS"
+    address: "8.8.8.8"
+    description: "Primary Google DNS server"
+
+  - name: "Cloudflare DNS"
+    address: "1.1.1.1"
+    description: "Cloudflare DNS server"
+
+  - name: "OpenDNS"
+    address: "208.67.222.222"
+    description: "OpenDNS resolver"
+
+  - name: "Local Loopback"
+    address: "127.0.0.1"
+    description: "Localhost loopback interface"
+
+http_endpoints:
+  - name: "Google"
+    url: "https://www.google.com"
+    expected_status: 200
+    timeout_s: 5
+
+  - name: "Cloudflare"
+    url: "https://www.cloudflare.com"
+    expected_status: 200
+    timeout_s: 5
+
+  - name: "GitHub"
+    url: "https://github.com"
+    expected_status: 200
+    timeout_s: 5
+
+  - name: "HTTPBin (GET)"
+    url: "https://httpbin.org/get"
+    expected_status: 200
+    timeout_s: 8
+
+  - name: "HTTPBin (404 expected)"
+    url: "https://httpbin.org/status/404"
+    expected_status: 404
+    timeout_s: 5
+
+dns_lookups:
+  - name: "google.com"
+    hostname: "google.com"
+
+  - name: "github.com"
+    hostname: "github.com"
+
+  - name: "cloudflare.com"
+    hostname: "cloudflare.com"
+
+  - name: "nonexistent.invalid"
+    hostname: "nonexistent.thisdoesnotexist.invalid"
+    expect_failure: true
+
+port_checks:
+  - name: "Google HTTP"
+    host: "google.com"
+    port: 80
+    expect_open: true
+
+  - name: "Google HTTPS"
+    host: "google.com"
+    port: 443
+    expect_open: true
+
+  - name: "GitHub SSH"
+    host: "github.com"
+    port: 22
+    expect_open: true
+
+  - name: "Blocked port"
+    host: "google.com"
+    port: 9999
+    expect_open: false
