@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Automated Network System Test Framework
 
 A Python-based automation framework that simulates and validates system-level network communication scenarios — covering connectivity, DNS resolution, port reachability, HTTP endpoint validation, and TLS certificate integrity.
@@ -126,3 +127,4 @@ The design is deliberately extensible — adding a new test type means creating 
 ---
 
 *Built as a portfolio project demonstrating automation testing, network protocols, and system validation.*
+ 
